@@ -7,12 +7,16 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.1"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:1.5"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.grade files
     }
 }
+
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.rodri042'
 
 allprojects {
     repositories {
@@ -21,6 +25,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+task cleanBuild(type: Delete) {
     delete rootProject.buildDir
 }
